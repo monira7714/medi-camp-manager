@@ -1,9 +1,10 @@
-import { Button } from "@material-tailwind/react";
+import { Outlet } from "react-router-dom";
 
 const Main = () => {
     return (
         <div>
-            <Button>Button</Button>
+            <Outlet></Outlet>
+            
         </div>
     );
 };
