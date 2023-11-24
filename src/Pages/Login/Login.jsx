@@ -1,9 +1,13 @@
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
+import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
         <div className="my-20 flex flex-col items-center justify-center">
+            <Helmet>
+                <title>Medi Camp | Login</title>
+            </Helmet>
             <Card color="transparent" shadow={false}>
                 <Typography className=" text-center" variant="h4" color="blue-gray">
                     Sign In
