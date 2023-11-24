@@ -1,4 +1,5 @@
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
+import { Link } from "react-router-dom";
 
 const Login = () => {
     return (
@@ -38,11 +39,23 @@ const Login = () => {
                     </Button>
                     <Typography color="gray" className="mt-4 text-center font-normal">
                         New Here?{" "}
-                        <a href="#" className="font-medium text-gray-900">
-                            Sign Up
-                        </a>
+                        <Link to='/register'>
+                            <a className="btn btn-link font-medium text-gray-900">
+                                Sign Up
+                            </a>
+                        </Link>
                     </Typography>
                 </form>
+                <h1 className="text-2xl font-bold text-center">Or</h1>
+                <Button
+                    size="lg"
+                    variant="outlined"
+                    color="blue-gray"
+                    className="flex items-center gap-3 justify-center mt-4"
+                >
+                    <img src="https://docs.material-tailwind.com/icons/google.svg" alt="metamask" className="h-6 w-6" />
+                    Continue with Google
+                </Button>
             </Card>
         </div>
     );
