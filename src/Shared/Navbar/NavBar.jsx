@@ -1,10 +1,23 @@
-import { Navbar, MobileNav, Typography, Button, IconButton } from "@material-tailwind/react";
+import { Navbar, MobileNav, Typography, Button, IconButton, Popover, PopoverHandler, PopoverContent } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import { getAuth } from "firebase/auth";
+import { Avatar } from "@material-tailwind/react";
 
 const NavBar = () => {
 
     const [openNav, setOpenNav] = useState(false);
+    const { user, logOut } = useAuth();
+    const auth = getAuth()
+    console.log(auth.currentUser, user);
+
+    const handleLogOut = () => {
+        logOut()
+            .then(result => console.log(result))
+            .catch(error => console.error(error))
+    }
+
 
     useEffect(() => {
         window.addEventListener(
@@ -29,7 +42,7 @@ const NavBar = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-               <Link><a className="flex items-center">Available Camps</a></Link>
+                <Link><a className="flex items-center">Available Camps</a></Link>
             </Typography>
             <Typography
                 as="li"
@@ -63,20 +76,31 @@ const NavBar = () => {
                     <div className="flex items-center gap-4">
                         <div className="mr-4 hidden lg:block">{navList}</div>
                         <div className="flex items-center gap-x-1">
-                            <Button
-                                variant="gradient"
-                                size="md"
-                                className="hidden lg:inline-block"
-                            >
-                                <span>Sign Up</span>
-                            </Button>
-                            <Button
-                                variant="gradient"
-                                size="md"
-                                className="hidden lg:inline-block"
-                            >
-                                <span>Sign In</span>
-                            </Button>
+                            {user ? <div className="">
+                                <Popover placement="bottom">
+                                    <PopoverHandler>
+                                        <Button variant="text"><Avatar src={auth.currentUser.photoURL}/></Button>
+                                    </PopoverHandler>
+                                    <PopoverContent>
+                                    <Button onClick={handleLogOut} variant="gradient" size="md" className="hidden lg:inline-block"><span>Sign Out</span></Button>
+                                    </PopoverContent>
+                                </Popover>
+                                <label></label>
+
+                            </div>
+                                : <>
+                                    <Link to='/register'>
+                                        <Button variant="gradient" size="md" className="hidden lg:inline-block">
+                                            <span>Sign Up</span>
+                                        </Button>
+                                    </Link>
+                                    <Link to={'/login'}>
+                                        <Button variant="gradient" size="md" className="hidden lg:inline-block">
+                                            <span>Sign In</span>
+                                        </Button>
+                                    </Link>
+                                </>
+                            }
                         </div>
                         <IconButton
                             variant="text"

@@ -1,8 +1,51 @@
 import { Card, Input, Button, Typography } from "@material-tailwind/react";
 import { Helmet } from "react-helmet-async";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import useAuth from "../../Hooks/useAuth";
+import Swal from "sweetalert2";
 
 const Login = () => {
+    const navigate = useNavigate();
+    const location = useLocation();
+    const { signInWithGoogle, logIn } = useAuth();
+
+    const handleLogin = e => {
+        e.preventDefault()
+        const form = e.target;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password);
+        logIn(email,password)
+            .then(result => {
+                console.log(result.user);
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Congratulations',
+                    text: 'You have logged in successfully',
+                })
+                navigate(location?.state ? location.state : '/')
+
+            })
+    }
+
+    const handleGoogle = () => {
+        signInWithGoogle()
+            .then(result => {
+                console.log(result.user);
+                // navigate(from, { replace: true });
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                console.error(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops.......',
+                    text: error.message
+                })
+            })
+
+    }
+
     return (
         <div className="my-20 flex flex-col items-center justify-center">
             <Helmet>
@@ -12,13 +55,14 @@ const Login = () => {
                 <Typography className=" text-center" variant="h4" color="blue-gray">
                     Sign In
                 </Typography>
-                <form className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
+                <form onSubmit={handleLogin} className="mt-8 mb-2 w-80 max-w-screen-lg sm:w-96">
                     <div className="mb-1 flex flex-col gap-6">
                         <Typography variant="h6" color="blue-gray" className="-mb-3">
                             Your Email
                         </Typography>
                         <Input
                             size="lg"
+                            name='email'
                             placeholder="name@mail.com"
                             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
                             labelProps={{
@@ -30,6 +74,7 @@ const Login = () => {
                         </Typography>
                         <Input
                             type="password"
+                            name='password'
                             size="lg"
                             placeholder="********"
                             className=" !border-t-blue-gray-200 focus:!border-t-gray-900"
@@ -38,10 +83,20 @@ const Login = () => {
                             }}
                         />
                     </div>
-                    <Button className="mt-6" fullWidth>
+                    <Input
+                        type="submit"
+                        size="lg"
+                        value='Sign Up'
+                        className="my-6 bg-[#151515] !border-none text-xl text-white"
+                        labelProps={{
+                            className: "before:content-none after:content-none",
+                        }}
+                    />
+                    {/* <Button className="mt-6" fullWidth>
                         sign in
-                    </Button>
-                    <Typography color="gray" className="mt-4 text-center font-normal">
+                    </Button> */}
+                </form>
+                <Typography color="gray" className="mt-8 text-center font-normal">
                         New Here?{" "}
                         <Link to='/register'>
                             <a className="btn btn-link font-medium text-gray-900">
@@ -49,9 +104,8 @@ const Login = () => {
                             </a>
                         </Link>
                     </Typography>
-                </form>
                 <h1 className="text-2xl font-bold text-center">Or</h1>
-                <Button
+                <Button onClick={handleGoogle}
                     size="lg"
                     variant="outlined"
                     color="blue-gray"
