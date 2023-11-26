@@ -1,0 +1,27 @@
+[
+    {
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSxS3T2DT989_lyLPgCZuCj9rFJsip5r_kfpQ&usqp=CAU",
+        "title": "Community Health Checkup",
+        "place": "Jalalabad Housing Society",
+        "service": "General body checkup",
+        "highlight":"500 people are checked up",
+        "id": 1
+    },
+    {
+        "img": "https://bdbangurendowment.com/assets/images/hw-8.jpg",
+        "title": "Vaccination Program",
+        "place": "Nasirabad Housing Society",
+        "service": "Providing vaccine to child under 10",
+        "highlight":"1000 children got vaccinated",
+        "id": 2
+
+    },
+    {
+        "img": "https://bdbangurendowment.com/assets/images/medical-camp/slide-mc-2.jpg",
+        "title": "Eye Health Camp",
+        "place": "Kolpolok Housing Society",
+        "service": "General Eye Check and Spot Treatment",
+        "highlight":"140 myopia patient are given treatment.",
+        "id": 3
+    }
+]
