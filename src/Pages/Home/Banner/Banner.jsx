@@ -18,7 +18,7 @@ const Banner = () => {
         return <Spinner className="h-16 w-16 text-gray-900/50 text-center" />
       }
     return (
-        <div className='text-black'>
+        <div className='text-black my-12'>
             {/* {data?.length} */}
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 {

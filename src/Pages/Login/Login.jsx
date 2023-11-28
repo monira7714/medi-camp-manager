@@ -3,10 +3,12 @@ import { Helmet } from "react-helmet-async";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
 import Swal from "sweetalert2";
+import useAxiosPublic from "../../Hooks/useAxiosPublic";
 
 const Login = () => {
     const navigate = useNavigate();
     const location = useLocation();
+    const axiosPublic = useAxiosPublic()
     const { signInWithGoogle, logIn } = useAuth();
 
     const handleLogin = e => {
@@ -15,7 +17,7 @@ const Login = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password);
-        logIn(email,password)
+        logIn(email, password)
             .then(result => {
                 console.log(result.user);
                 Swal.fire({
@@ -24,7 +26,6 @@ const Login = () => {
                     text: 'You have logged in successfully',
                 })
                 navigate(location?.state ? location.state : '/')
-
             })
     }
 
@@ -32,7 +33,20 @@ const Login = () => {
         signInWithGoogle()
             .then(result => {
                 console.log(result.user);
-                // navigate(from, { replace: true });
+                const userInfo = {
+                    email: result.user?.email,
+                    name: result.user?.displayName
+                }
+                axiosPublic.post('/users', userInfo)
+                    .then(res => {
+                        console.log(res.data);
+                        navigate('/');
+                    })
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Congratulations',
+                    text: 'You have Logged in successfully',
+                })
                 navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
@@ -82,28 +96,17 @@ const Login = () => {
                                 className: "before:content-none after:content-none",
                             }}
                         />
+                        <button className="bg-black text-white py-3 rounded-lg"><input type="submit" value="Sign In" /></button>
                     </div>
-                    <Input
-                        type="submit"
-                        size="lg"
-                        value='Sign Up'
-                        className="my-6 bg-[#151515] !border-none text-xl text-white"
-                        labelProps={{
-                            className: "before:content-none after:content-none",
-                        }}
-                    />
-                    {/* <Button className="mt-6" fullWidth>
-                        sign in
-                    </Button> */}
                 </form>
                 <Typography color="gray" className="mt-8 text-center font-normal">
-                        New Here?{" "}
-                        <Link to='/register'>
-                            <a className="btn btn-link font-medium text-gray-900">
-                                Sign Up
-                            </a>
-                        </Link>
-                    </Typography>
+                    New Here?{" "}
+                    <Link to='/register'>
+                        <a className="btn btn-link font-medium text-gray-900">
+                            Sign Up
+                        </a>
+                    </Link>
+                </Typography>
                 <h1 className="text-2xl font-bold text-center">Or</h1>
                 <Button onClick={handleGoogle}
                     size="lg"

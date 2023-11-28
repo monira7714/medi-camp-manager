@@ -2,6 +2,7 @@ import { createContext, useEffect, useState } from "react";
 import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup, updateProfile } from "firebase/auth";
 import PropTypes from 'prop-types'
 import app from './../FIrebase/firebase.config';
+import useAxiosPublic from "../Hooks/useAxiosPublic";
 
 
 export const AuthContext = createContext(null);
@@ -12,8 +13,7 @@ const AuthProvider = ({ children }) => {
 
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-
-
+    const axiosPublic = useAxiosPublic()
     const registerUser = (email, password) => {
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
 
     const logIn = (email, password) => {
         setLoading(true);
-        return signInWithEmailAndPassword(auth,email,password)
+        return signInWithEmailAndPassword(auth, email, password)
     }
 
     const logOut = () => {
@@ -47,12 +47,13 @@ const AuthProvider = ({ children }) => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             console.log(currentUser)
             setUser(currentUser);
+            
             setLoading(false)
         })
         return () => {
             return unSubscribe()
         }
-    }, [])
+    }, [axiosPublic])
 
     const authInfo = { user, loading, registerUser, logIn, logOut, signInWithGoogle, updateUserProfile };
 

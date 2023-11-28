@@ -9,18 +9,18 @@ import useAxiosPublic from './../../Hooks/useAxiosPublic';
 const Register = () => {
     const axiosPublic = useAxiosPublic();
     const navigate = useNavigate();
-    const { register, handleSubmit, reset, formState: { errors } } = useForm();
     const { registerUser, signInWithGoogle, updateUserProfile } = useAuth();
+    const { register, handleSubmit, reset, formState: { errors } } = useForm();
 
     const onSubmit = data => {
-
         registerUser(data.email, data.password)
             .then(result => {
                 const loggedUser = result.user;
-                console.log(loggedUser);
-                navigate('/');
+                console.log(loggedUser, data);
+                // navigate('/');
                 updateUserProfile(data.name, data.photoURL)
-                    .then(() => {
+                    .then(result => {
+                        console.log(result, 'updated');
                         const userInfo = {
                             name: data.name,
                             email: data.email
@@ -30,21 +30,32 @@ const Register = () => {
                                 if (res.data.insertedId) {
                                     console.log('user added to the database')
                                     reset();
-                                    Swal.fire({
-                                        position: 'top-end',
-                                        icon: 'success',
-                                        title: 'User created successfully.',
-                                        showConfirmButton: false,
-                                        timer: 1500
-                                    });
-                                    
+                                    navigate('/')
                                 }
                             })
                     })
                     .catch(error => {
-                        console.log(error)
-                        navigate(location?.state ? location.state : '/')
+                        console.log(error);
+                        console.log('not updated and added to db');
+                        // navigate(location?.state ? location.state : '/')
                     })
+
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Congratulations',
+                    text: 'You have registered successfully',
+                })
+
+                // navigate('/')
+            })
+            .catch(error => {
+                console.log(error);
+                console.log("coming from error");
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops.......',
+                    text: error.message
+                })
             })
     };
 
@@ -66,7 +77,7 @@ const Register = () => {
                     title: 'Congratulations',
                     text: 'You have Logged in successfully',
                 })
-                navigate(location?.state ? location.state : '/')
+                navigate('/')
 
             })
             .catch(error => {
@@ -161,17 +172,9 @@ const Register = () => {
                         {errors.password?.type === 'minLength' && <p className="text-red-600">Password must be 6 characters</p>}
                         {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
                         {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
+                        <button className="bg-black text-white py-3 rounded-lg"><input type="submit" value="Sign Up" /></button>
+                     
                     </div>
-
-                    <Input
-                        type="submit"
-                        size="lg"
-                        value='Sign Up'
-                        className="my-6 bg-[#151515] !border-none text-xl text-white"
-                        labelProps={{
-                            className: "before:content-none after:content-none",
-                        }}
-                    />
                 </form>
                 <Typography color="black" className="mt-8 mb-3 text-center font-normal text-lg">
                     Already have an account?{" "}
