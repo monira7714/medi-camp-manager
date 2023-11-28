@@ -34,7 +34,7 @@ const NavBar = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link to='/'><a className="flex items-center">Home</a></Link>
+                <Link to='/'><span className="flex items-center">Home</span></Link>
             </Typography>
             <Typography
                 as="li"
@@ -42,7 +42,7 @@ const NavBar = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link><a className="flex items-center">Available Camps</a></Link>
+                <Link><span className="flex items-center">Available Camps</span></Link>
             </Typography>
             <Typography
                 as="li"
@@ -50,7 +50,7 @@ const NavBar = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link><a className="flex items-center">DashBoard</a></Link>
+                <Link><span className="flex items-center">DashBoard</span></Link>
             </Typography>
             <Typography
                 as="li"
@@ -58,7 +58,7 @@ const NavBar = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link><a className="flex items-center">Contact Us</a></Link>
+                <Link><span className="flex items-center">Contact Us</span></Link>
             </Typography>
         </ul>
     );
@@ -73,16 +73,16 @@ const NavBar = () => {
                     > <img className="w-[40px]" src="https://i.ibb.co/ZMZjKbS/camping-tent.png" alt="" />
                         Medi Camp Manager
                     </Typography>
-                    <div className="flex items-center gap-4">
+                    <div className=" flex flex-row items-center justify-center gap-4 ">
                         <div className="mr-4 hidden lg:block">{navList}</div>
                         <div className="flex items-center gap-x-1">
-                            {user ? <div className="hidden">
+                            {user ? <div className=" ">
                                 <Popover placement="bottom">
                                     <PopoverHandler>
                                         <Button variant="text"><Avatar src={auth.currentUser.photoURL} /></Button>
                                     </PopoverHandler>
                                     <PopoverContent>
-                                        <Button onClick={handleLogOut} variant="gradient" size="md" className="hidden lg:inline-block"><span>Sign Out</span></Button>
+                                        <button onClick={handleLogOut} className="rounded-lg px-3 py-2 bg-black text-white "><span>Sign Out</span></button>
                                     </PopoverContent>
                                 </Popover>
                             </div>

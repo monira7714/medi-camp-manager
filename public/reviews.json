@@ -1,0 +1,27 @@
+[
+    {
+        "_id": "643010e0f5a7e52ce1e8fa65",
+        "name": "Jane Doe",
+        "campName": "Community Health Checkup",
+        "feedback": "It was our best ever experience with Medi Camp Manager. We appreciate their hard work and look forward to work with them soon",
+        "rating": 4,
+        "date": "April 2nd, 2022"
+    },
+    {
+        "_id": "6430110af5a7e52ce1e8fa67",
+        "name": "MJ Doe",
+        "campName": "Vaccination Program",
+        "feedback": "Their service was outstanding. They kept their word. The camp went so smooth and all utilities was provided very well",
+        "rating": 5,
+        "date": "June 1st, 2022"
+
+    },
+    {
+        "_id": "6430113af5a7e52ce1e8fa69",
+        "name": "Robert Johnson",
+        "campName": "Eye Health Camp",
+        "feedback": "This is by far the best service I have ever used. The customer support is outstanding, and they arranged the best medical camp possible!",
+        "rating": 5,
+        "date": "December 3rd, 2022"
+    }
+]

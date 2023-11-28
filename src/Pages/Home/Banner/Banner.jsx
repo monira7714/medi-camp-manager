@@ -8,9 +8,10 @@ import { FaTrophy } from "react-icons/fa6";
 
 const Banner = () => {
     const { data:bannerInfo, isPending } = useQuery({
-        queryKey: ['repoData'],
+        queryKey: ['bannerInfo'],
         queryFn: () =>
-          fetch('./bannerInfo.json').then(
+          fetch('./bannerInfo.json')
+          .then(
             (res) => res.json(),
           ),
       })
@@ -18,7 +19,7 @@ const Banner = () => {
         return <Spinner className="h-16 w-16 text-gray-900/50 text-center" />
       }
     return (
-        <div className='text-black my-12'>
+        <div className='text-black mt-12'>
             {/* {data?.length} */}
             <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
                 {
@@ -37,8 +38,6 @@ const Banner = () => {
                         </div>
                     </SwiperSlide>)
                 }
-                
-                
             </Swiper>
         </div>
     );
