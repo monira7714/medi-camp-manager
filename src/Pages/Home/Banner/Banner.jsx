@@ -1,7 +1,7 @@
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
-import { Navigation } from 'swiper/modules';
+import { Pagination, Navigation } from 'swiper/modules';
 import { useQuery } from '@tanstack/react-query';
 import { Spinner } from '@material-tailwind/react';
 import { FaTrophy } from "react-icons/fa6";
@@ -21,7 +21,7 @@ const Banner = () => {
     return (
         <div className='text-black mt-12'>
             {/* {data?.length} */}
-            <Swiper navigation={true} modules={[Navigation]} className="mySwiper">
+            <Swiper slidesPerView={1} spaceBetween={30} navigation={true} pagination={{clickable:true,}} loop={true} modules={[Pagination, Navigation]} className="mySwiper">
                 {
                     bannerInfo.map(item => <SwiperSlide key={item.id}>
                         <div className='bg-indigo-100/30 flex justify-between items-center'>

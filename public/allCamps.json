@@ -1,0 +1,111 @@
+[
+    {
+        "id": 1,
+        "tag": "popular",
+        "name": "Heart Health Awareness Camp",
+        "img": "https://img.freepik.com/free-vector/flat-world-health-day-social-media-post-template_23-2149304297.jpg?w=1380&t=st=1701186877~exp=1701187477~hmac=82da724e7d832ab8a54db8396769c697eb9440c6bd0583ecbb1b05cb2e19d38d",
+        "fees": 20,
+        "date_time": "2023-04-07 09:00 AM - 4:00 PM",
+        "location": "City Hospital, Main Street",
+        "service": "Free cholesterol screening",
+        "professionals": "Cardiologist , Nurse , Nutritionist",
+        "audience": "Adults aged 30 and above"
+    },
+    {
+        "id": 2,
+        "tag": "all",
+        "name": "Family Wellness Checkup Camp",
+        "img": "https://img.freepik.com/free-vector/stethoscope-happy-family_23-2147658240.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
+        "fees": 50,
+        "date_time": "2023-04-10 10:00 AM - 3:00 PM",
+        "location": "Community Center, Oak Street",
+        "service": "Comprehensive health assessments",
+        "professionals": "General , Practitioner , Pediatrician , Dietitian",
+        "audience": "Families with children"
+    },
+    {
+        "id": 3,
+        "tag": "popular",
+        "name": "Diabetes Awareness and Screening Camp",
+        "img": "https://img.freepik.com/free-vector/world-diabetes-day-poster-design_1308-118842.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
+        "fees": 15,
+        "date_time": "2023-11-14 08:30 AM - 2:30 PM",
+        "location": "City Park, Maple Avenue",
+        "service": "Free blood sugar testing",
+        "professionals": "Endocrinologist , Diabetes Educator , Podiatrist",
+        "audience": "Individuals at risk or diagnosed with diabetes"
+    },
+    {
+        "id": 4,
+        "tag": "all",
+        "name": "Women's Health and Wellness Camp",
+        "img": "https://i.ibb.co/Ttt8GSp/womens-health.jpg",
+        "fees": 50,
+        "date_time": "2023-06-08 11:00 AM - 4:00 PM",
+        "location": "Women's Center, Rose Street",
+        "service": "Women's health screenings and consultations",
+        "professionals": "Gynecologist , Mammographer , Nurse",
+        "audience": "Women of all ages"
+    },
+    {
+        "id": 5,
+        "tag": "popular",
+        "name": "Pediatric Immunization Drive",
+        "img": "https://img.freepik.com/free-vector/children-kids-wearing-face-mask-get-safety-vaccine-protection-from-coronavirus-covid19_40876-2934.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
+        "fees": 5,
+        "date_time": "2023-07-12 09:30 AM - 3:30 PM",
+        "location": "Pediatric Clinic, Elm Street",
+        "service": "Free vaccinations for children",
+        "professionals": "Pediatrician , Pediatric Nurse , Immunization Specialist",
+        "audience": "Infants and children up to 12 years"
+    },
+    {
+        "id": 6,
+        "tag": "popular",
+        "name": "Mental Health Awareness Seminar",
+        "img": "https://img.freepik.com/premium-photo/world-mental-health-day_860028-281.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
+        "fees": 10,
+        "date_time": "2023-08-25 05:00 PM - 7:00 PM",
+        "location": "Community Hall, Birch Street",
+        "service": "Educational sessions on mental health",
+        "professionals": "Psychiatrist , Psychologist , Counselor",
+        "audience": "General public interested in mental health"
+    },
+    {
+        "id": 7,
+        "tag": "all",
+        "name": "Senior Health and Fitness Expo",
+        "img": "https://img.freepik.com/free-vector/poster-template-with-senior-health-fitness-conceptwatercolor-style_83728-9830.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
+        "fees": 25,
+        "date_time": "2023-09-18 10:00 AM - 2:00 PM",
+        "location": "Senior Center, Pine Street",
+        "service": "Senior fitness assessments and health talks",
+        "professionals":
+            "Geriatrician , Physical Therapist , Nutritionist",
+        "audience": "Seniors aged 60 and above"
+    },
+    {
+        "id": 8,
+        "tag": "popular",
+        "name": "Vision Care and Eye Screening Camp",
+        "img": "https://img.freepik.com/premium-vector/checkup-eyesight-patient-by-ophthalmologist-doctor_202271-1289.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
+        "fees": 10,
+        "date_time": "2023-10-10 08:00 AM - 1:00 PM",
+        "location": "Eye Clinic, Walnut Street",
+        "service": "Free eye examinations and vision tests",
+        "professionals": "Ophthalmologist , Optometrist , Optician",
+        "audience": "Individuals of all ages"
+    },
+    {
+        "id": 9,
+        "tag": "popular",
+        "name": "Dental Health Camp",
+        "img": "https://img.freepik.com/free-vector/dental-care-concept-illustration_52683-66519.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
+        "fees": 55,
+        "date_time": "2023-09-25 09:00 AM - 1:00 PM",
+        "location": "Dental Clinic",
+        "service": "Free Dental Check-up",
+        "professionals": "Dentist , Dental Hygienist",
+        "audience": "All Ages"
+    }
+]

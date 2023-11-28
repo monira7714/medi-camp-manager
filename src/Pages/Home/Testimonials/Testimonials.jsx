@@ -13,7 +13,7 @@ const Testimonials = () => {
 
     const { reviews } = useTestimonials();
     const recentReviews = reviews?.slice(-5)
-    console.log(recentReviews);
+    // console.log(recentReviews);
     return (
         <div className="mx-20 md:my-20 my-8">
             <div className="text-center">
