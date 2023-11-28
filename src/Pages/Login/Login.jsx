@@ -96,7 +96,7 @@ const Login = () => {
                                 className: "before:content-none after:content-none",
                             }}
                         />
-                        <button className="bg-black text-white py-3 rounded-lg"><input type="submit" value="Sign In" /></button>
+                        <input className="bg-black text-white py-3 rounded-lg" type="submit" value="Sign In" />
                     </div>
                 </form>
                 <Typography color="gray" className="mt-8 text-center font-normal">

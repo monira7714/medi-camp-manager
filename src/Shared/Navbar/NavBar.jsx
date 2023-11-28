@@ -1,4 +1,4 @@
-import { Navbar, MobileNav, Typography, Button, IconButton, Popover, PopoverHandler, PopoverContent } from "@material-tailwind/react";
+import { Navbar, MobileNav, Typography, Button, IconButton, Popover, PopoverHandler, PopoverContent, Collapse } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
@@ -10,7 +10,7 @@ const NavBar = () => {
     const [openNav, setOpenNav] = useState(false);
     const { user, logOut } = useAuth();
     const auth = getAuth()
-    console.log(auth.currentUser, user);
+    console.log(auth.currentUser);
 
     const handleLogOut = () => {
         logOut()
@@ -76,17 +76,15 @@ const NavBar = () => {
                     <div className="flex items-center gap-4">
                         <div className="mr-4 hidden lg:block">{navList}</div>
                         <div className="flex items-center gap-x-1">
-                            {user ? <div className="">
+                            {user ? <div className="hidden">
                                 <Popover placement="bottom">
                                     <PopoverHandler>
-                                        <Button variant="text"><Avatar src={auth.currentUser.photoURL}/></Button>
+                                        <Button variant="text"><Avatar src={auth.currentUser.photoURL} /></Button>
                                     </PopoverHandler>
                                     <PopoverContent>
-                                    <Button onClick={handleLogOut} variant="gradient" size="md" className="hidden lg:inline-block"><span>Sign Out</span></Button>
+                                        <Button onClick={handleLogOut} variant="gradient" size="md" className="hidden lg:inline-block"><span>Sign Out</span></Button>
                                     </PopoverContent>
                                 </Popover>
-                                <label></label>
-
                             </div>
                                 : <>
                                     <Link to='/register'>
@@ -141,17 +139,45 @@ const NavBar = () => {
                         </IconButton>
                     </div>
                 </div>
-                <MobileNav open={openNav}>
+                <Collapse open={openNav}>
                     {navList}
-                    <div className="flex items-center gap-x-1">
-                        <Button fullWidth variant="text" size="sm" className="">
-                            <span>Log In</span>
-                        </Button>
-                        <Button fullWidth variant="gradient" size="sm" className="">
-                            <span>Sign in</span>
-                        </Button>
+                    {user ? <div className="lg:hidden">
+                        <Popover placement="bottom">
+                            <PopoverHandler>
+                                <Button variant="text"><Avatar src={auth.currentUser.photoURL} /></Button>
+                            </PopoverHandler>
+                            <PopoverContent>
+                                <Button onClick={handleLogOut} variant="gradient" size="md" className="-mt-1"><span>Sign Out</span></Button>
+                            </PopoverContent>
+                        </Popover>
+
                     </div>
-                </MobileNav>
+                        : <div className="flex gap-4">
+                            <Link to='/register'>
+                                <Button variant="gradient" size="md" className="">
+                                    <span>Sign Up</span>
+                                </Button>
+                            </Link>
+                            <Link to={'/login'}>
+                                <Button variant="gradient" size="md" className="">
+                                    <span>Sign In</span>
+                                </Button>
+                            </Link>
+                        </div >
+                    }
+                    {/* <div className="flex items-center gap-x-1">
+                        <Link to='/register'>
+                            <Button variant="gradient" size="md" className=" lg:inline-block">
+                                <span>Sign Up</span>
+                            </Button>
+                        </Link>
+                        <Link to={'/login'}>
+                            <Button variant="gradient" size="md" className=" md:inline-block">
+                                <span>Sign In</span>
+                            </Button>
+                        </Link>
+                    </div> */}
+                </Collapse>
             </Navbar>
         </div>
     );

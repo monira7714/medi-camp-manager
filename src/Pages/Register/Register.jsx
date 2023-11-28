@@ -30,9 +30,9 @@ const Register = () => {
                                 if (res.data.insertedId) {
                                     console.log('user added to the database')
                                     reset();
-                                    navigate('/')
                                 }
                             })
+                        navigate('/')
                     })
                     .catch(error => {
                         console.log(error);
@@ -50,7 +50,8 @@ const Register = () => {
             })
             .catch(error => {
                 console.log(error);
-                console.log("coming from error");
+                // console.log("coming from error");
+                navigate('/');
                 Swal.fire({
                     icon: 'error',
                     title: 'Oops.......',
@@ -87,6 +88,7 @@ const Register = () => {
                     title: 'Oops.......',
                     text: error.message
                 })
+                navigate('/')
             })
 
     }
@@ -173,7 +175,6 @@ const Register = () => {
                         {errors.password?.type === 'maxLength' && <p className="text-red-600">Password must be less than 20 characters</p>}
                         {errors.password?.type === 'pattern' && <p className="text-red-600">Password must have one Uppercase one lower case, one number and one special character.</p>}
                         <button className="bg-black text-white py-3 rounded-lg"><input type="submit" value="Sign Up" /></button>
-                     
                     </div>
                 </form>
                 <Typography color="black" className="mt-8 mb-3 text-center font-normal text-lg">
