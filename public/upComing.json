@@ -1,0 +1,27 @@
+[
+    {
+        "id": 1,
+        "campName": "Blood Donation Drive",
+        "date": "January 22nd,2024",
+        "img": "https://i.ibb.co/G9S05k8/upcoming-blood.jpg"
+    },
+    {
+        "id": 2,
+        "campName": "Autism Awareness Day",
+        "date": "April 2nd, 2024",
+        "img": "https://i.ibb.co/pnmkM9L/upcoming-autism.jpg"
+    },
+    {
+        "id": 3,
+        "campName": "Dental Care Day",
+        "date": "May 12th, 2024",
+        "img": "https://i.ibb.co/gR81Nk5/upcoming-dental.jpg"
+       
+    },
+    {
+        "id": 4,
+        "campName": "Nutrition Day Camp",
+        "date": "May 18th, 2024",
+        "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzuJhjBzRaXvGV6gJ3_hwsBzYSIOqA8cSUOQ&usqp=CAU"
+    }
+]

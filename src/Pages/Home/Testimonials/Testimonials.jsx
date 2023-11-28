@@ -15,7 +15,7 @@ const Testimonials = () => {
     const recentReviews = reviews?.slice(-5)
     console.log(recentReviews);
     return (
-        <div className="mx-20 ">
+        <div className="mx-20 md:my-20 my-8">
             <div className="text-center">
                 <h1 className="text-4xl font-semibold pb-3">Testimonials</h1>
                 <p className=" text-xl">Let&apos;s have a look what our client says</p>
