@@ -1,4 +1,4 @@
-import { Navbar, MobileNav, Typography, Button, IconButton, Popover, PopoverHandler, PopoverContent, Collapse } from "@material-tailwind/react";
+import { Navbar, Typography, Button, IconButton, Popover, PopoverHandler, PopoverContent, Collapse } from "@material-tailwind/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import useAuth from "../../Hooks/useAuth";
