@@ -4,6 +4,8 @@ import ErrorPage from "../ErrorPage/ErrorPage";
 import Register from "../Pages/Register/Register";
 import Login from "../Pages/Login/Login";
 import Home from "../Pages/Home/Home/Home";
+import AvailableCamps from "../Pages/AvailableCamps/AvailableCamps";
+import ContactUs from "../Pages/ContactUs/ContactUs";
   
   const router = createBrowserRouter([
     {
@@ -22,6 +24,14 @@ import Home from "../Pages/Home/Home/Home";
         {
           path: '/',
           element:<Home></Home>
+        },
+        {
+          path:'/availableCamps',
+          element: <AvailableCamps></AvailableCamps>
+        },
+        {
+          path: '/contactUs',
+          element: <ContactUs></ContactUs>
         }
       ]
     },

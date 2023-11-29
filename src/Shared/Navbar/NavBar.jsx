@@ -42,7 +42,7 @@ const NavBar = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link><span className="flex items-center">Available Camps</span></Link>
+                <Link to='/availableCamps'><span className="flex items-center">Available Camps</span></Link>
             </Typography>
             <Typography
                 as="li"
@@ -58,7 +58,7 @@ const NavBar = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link><span className="flex items-center">Contact Us</span></Link>
+                <Link to='/contactUs'><span className="flex items-center">Contact Us</span></Link>
             </Typography>
         </ul>
     );

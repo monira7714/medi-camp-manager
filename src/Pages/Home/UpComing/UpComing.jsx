@@ -22,6 +22,9 @@ const UpComing = () => {
 
     return (
         <div className='pb-8'>
+            <div className='flex justify-center'>
+                <h1 className='md:text-4xl text-2xl font-semibold mb-16 text-center'>Upcoming Medical Camps</h1>
+            </div>
             <Swiper
                 slidesPerView={4}
                 centeredSlides={true}
@@ -34,13 +37,11 @@ const UpComing = () => {
             >
                 {
                     upComings?.map(item => <SwiperSlide className='pb-8' key={item.id}>
-                        {/* {item.length} */}
-                            <img className='w-[450px] h-[400px]' src={item.img} />
-                            <div className='my-4 px-4 py-2 text-center rounded-lg bg-blue-gray-300'>
-                                <h1 className='text-xl font-semibold'>{item.campName}</h1>
-                                <p className='flex gap-3 items-center justify-center'><FaCalendar></FaCalendar>{item.date}</p>
-                                {/* <p className='text-2xl'>{item.place}</p> */}
-                            </div>
+                        <img className='lg:w-[450px] w-[350px] lg:h-[400px] h-[200px]' src={item.img} />
+                        <div className='my-4 md:h-[150px] px-4 py-2 text-center rounded-lg bg-blue-gray-300 hidden'>
+                            <h1 className='md:text-xl font-semibold'>{item.campName}</h1>
+                            <p className='flex gap-3 items-center justify-center'><FaCalendar></FaCalendar>{item.date}</p>
+                        </div>
                     </SwiperSlide>)
                 }
             </Swiper>

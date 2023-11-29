@@ -23,18 +23,18 @@ const Banner = () => {
             {/* {data?.length} */}
             <Swiper slidesPerView={1} spaceBetween={30} navigation={true} pagination={{clickable:true,}} loop={true} modules={[Pagination, Navigation]} className="mySwiper">
                 {
-                    bannerInfo.map(item => <SwiperSlide key={item.id}>
-                        <div className='bg-indigo-100/30 flex justify-between items-center'>
-                            <div className='pl-16 space-y-4'>
-                                <h1 className='text-6xl'>{item.title}</h1>
-                                <p className='text-3xl'>{item.service}</p>
-                                <p className='text-2xl'>{item.place}</p>
-                                <div className='flex gap-1 text-xl'>
+                    bannerInfo.map(item => <SwiperSlide className='pb-2' key={item.id}>
+                        <div className='bg-indigo-100/30 flex lg:flex-row flex-col-reverse pt-6 justify-between items-center'>
+                            <div className='md:pl-16 py-6 text-center md:space-y-4 space-y-2' >
+                                <h1 className='md:text-6xl text-2xl'>{item.title}</h1>
+                                <p className='md:text-3xl text-xl'>{item.service}</p>
+                                <p className='md:text-2xl '>{item.place}</p>
+                                <div className='flex justify-center gap-1 md:text-xl text-sm'>
                                     <FaTrophy className='mt-1'></FaTrophy>
-                                    <span className='w-2/3'>{item.highlight}</span>
+                                    <span className='md:w-2/3'>{item.highlight}</span>
                                 </div>
                             </div>
-                            <img className='w-1/2 min-h-screen' src={item.img} />
+                            <img className='w-1/2 md:min-h-screen' src={item.img} />
                         </div>
                     </SwiperSlide>)
                 }
