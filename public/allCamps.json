@@ -9,7 +9,8 @@
         "location": "City Hospital, Main Street",
         "service": "Free cholesterol screening",
         "professionals": "Cardiologist , Nurse , Nutritionist",
-        "audience": "Adults aged 30 and above"
+        "audience": "Adults aged 30 and above",
+        "details": "A Heart Health Awareness Camp is an event aimed at promoting cardiovascular health awareness, typically includes health screenings (blood pressure, cholesterol), educational sessions on heart health, consultations with healthcare professionals, and distribution of informational materials. The goal is to empower individuals with knowledge about he importance of heart health, heart disease prevention and encourage lifestyle changes for better heart health."
     },
     {
         "id": 2,
@@ -21,7 +22,9 @@
         "location": "Community Center, Oak Street",
         "service": "Comprehensive health assessments",
         "professionals": "General , Practitioner , Pediatrician , Dietitian",
-        "audience": "Families with children"
+        "audience": "Families with children",
+        "details": "A Family Wellness Checkup Camp is an organized event that focuses on the overall health and well-being of families. This camp typically offers a range of health services, screenings, and educational sessions to promote the health of all family members. Key components may include general health checkups, vaccinations, nutrition guidance, and family-centric health education."
+
     },
     {
         "id": 3,
@@ -33,7 +36,9 @@
         "location": "City Park, Maple Avenue",
         "service": "Free blood sugar testing",
         "professionals": "Endocrinologist , Diabetes Educator , Podiatrist",
-        "audience": "Individuals at risk or diagnosed with diabetes"
+        "audience": "Individuals at risk or diagnosed with diabetes",
+        "details": "A Diabetes Awareness and Screening Camp is an initiative aimed at raising awareness about diabetes and offering health screenings to identify individuals at risk. These camps commonly involve educational sessions on diabetes prevention,and management. The goal is to increase understanding of diabetes, promote early detection, and encourage lifestyle changes."
+
     },
     {
         "id": 4,
@@ -45,7 +50,9 @@
         "location": "Women's Center, Rose Street",
         "service": "Women's health screenings and consultations",
         "professionals": "Gynecologist , Mammographer , Nurse",
-        "audience": "Women of all ages"
+        "audience": "Women of all ages",
+        "details": "A Women's Health and Wellness Camp is an organized event dedicated to addressing the health and well-being of women. These camps provide a range of services, including health screenings, consultations, and educational sessions specific to women's health issues including breast cancer screenings, reproductive health discussions, and mental health awareness."
+
     },
     {
         "id": 5,
@@ -57,7 +64,9 @@
         "location": "Pediatric Clinic, Elm Street",
         "service": "Free vaccinations for children",
         "professionals": "Pediatrician , Pediatric Nurse , Immunization Specialist",
-        "audience": "Infants and children up to 12 years"
+        "audience": "Infants and children up to 12 years",
+        "details": "A Pediatric Immunization Drive is a targeted effort to provide vaccinations to children within a community to increase immunization coverage and protect children from preventable diseases. During such drives, healthcare professionals administer vaccines according to the recommended immunization schedule to ensure that children receive essential vaccinations, and prevent the spread of infectious diseases among other pediatric population. "
+
     },
     {
         "id": 6,
@@ -69,7 +78,9 @@
         "location": "Community Hall, Birch Street",
         "service": "Educational sessions on mental health",
         "professionals": "Psychiatrist , Psychologist , Counselor",
-        "audience": "General public interested in mental health"
+        "audience": "General public interested in mental health",
+        "details": "A Mental Health Awareness Seminar is an organized event focused on educating participants about mental health issues and promoting well-being to increase awareness,and provide resources for individuals to support their mental health. Mental Health Awareness Seminars play a crucial role in promoting open conversations and breaking down barriers associated with mental health challenges."
+
     },
     {
         "id": 7,
@@ -82,7 +93,9 @@
         "service": "Senior fitness assessments and health talks",
         "professionals":
             "Geriatrician , Physical Therapist , Nutritionist",
-        "audience": "Seniors aged 60 and above"
+        "audience": "Seniors aged 60 and above",
+        "details": "A Senior Health and Fitness Expo is an event specifically designed for the health and well-being of senior citizens. These expos feature a variety of services activities, and resources aimed at promoting physical and mental health among older individuals. Key components may include health screenings, fitness demonstrations, nutritional guidance on topics relevant to seniors' well-being."
+
     },
     {
         "id": 8,
@@ -94,7 +107,9 @@
         "location": "Eye Clinic, Walnut Street",
         "service": "Free eye examinations and vision tests",
         "professionals": "Ophthalmologist , Optometrist , Optician",
-        "audience": "Individuals of all ages"
+        "audience": "Individuals of all ages",
+        "details": "A Vision Care and Eye Screening Camp is an organized initiative focused on promoting eye health and providing screening services for individuals. These camps typically offer eye examinations, vision tests, and educational sessions on maintaining good eye health. Healthcare professionals may conduct screenings for common eye conditions, such as refractive errors or glaucoma."
+
     },
     {
         "id": 9,
@@ -106,6 +121,8 @@
         "location": "Dental Clinic",
         "service": "Free Dental Check-up",
         "professionals": "Dentist , Dental Hygienist",
-        "audience": "All Ages"
+        "audience": "All Ages",
+        "details": "A Dental Health Camp is an organized event aimed at promoting oral health and providing dental care services to individuals in a community. These camps typically offer a range of dental services, including check-ups, cleanings, and basic dental treatments. Key components often include oral health education, demonstrations of proper dental hygiene practices, and distribution of dental care supplies."
+
     }
 ]

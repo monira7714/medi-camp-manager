@@ -23,6 +23,17 @@ const ContactUs = () => {
     // style={{ height: '400px', width: '350px' }}
     return (
         <div >
+             <MapContainer className="lg:mx-96 md:mx-20 my-12 w-[350px] md:w-[600px] mx-auto lg:h-[500px] h-[300px]"  center={position} zoom={13} scrollWheelZoom={false} >
+                <TileLayer
+                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                />
+                <Marker position={position}>
+                    <Popup>
+                        Here you found us!
+                    </Popup>
+                </Marker>
+            </MapContainer>
             <div className="bg-blue-800 text-white flex flex-row gap-4 items-center justify-around px-12 py-12">
                 <div className="flex flex-col gap-3 items-center justify-center">
                     <FaLocationDot className="text-2xl"></FaLocationDot>
@@ -49,17 +60,7 @@ const ContactUs = () => {
                     <p>support@mediCampManager.com</p>
                 </div>
             </div>
-            <MapContainer className="lg:mx-96 md:mx-20 my-12 w-[350px] md:w-[600px] mx-auto lg:h-[500px] h-[300px]"  center={position} zoom={13} scrollWheelZoom={false} >
-                <TileLayer
-                    attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-                    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                />
-                <Marker position={position}>
-                    <Popup>
-                        Here you found us!
-                    </Popup>
-                </Marker>
-            </MapContainer>
+           
         </div>
     );
 };
