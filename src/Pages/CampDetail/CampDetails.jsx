@@ -54,7 +54,13 @@ const CampDetails = () => {
             fees: fee
         }
         console.log(participantInfo);
-       
+        axiosPublic.post('/joinCamp', participantInfo)
+        .then(res => {
+            if (res.data.insertedId) {
+                console.log('Participant added to the database')
+                reset();
+            }
+        })
     }
 
     return (
