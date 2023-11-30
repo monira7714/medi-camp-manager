@@ -7,6 +7,9 @@ import Home from "../Pages/Home/Home/Home";
 import AvailableCamps from "../Pages/AvailableCamps/AvailableCamps";
 import ContactUs from "../Pages/ContactUs/ContactUs";
 import CampDetails from "../Pages/CampDetail/CampDetails";
+import PrivateRouter from './PrivateRouter';
+import Dashboard from "../Layout/Dashboard";
+import ParticipantProfile from "../Pages/Dashboard/ParticipantProfile/ParticipantProfile";
   
   const router = createBrowserRouter([
     {
@@ -32,7 +35,7 @@ import CampDetails from "../Pages/CampDetail/CampDetails";
         },
         {
           path: 'camp-details/:campId',
-          element: <CampDetails></CampDetails>
+          element: <PrivateRouter><CampDetails></CampDetails></PrivateRouter>
         },
         {
           path: 'contactUs',
@@ -40,6 +43,17 @@ import CampDetails from "../Pages/CampDetail/CampDetails";
         }
       ]
     },
+    {
+      path: "dashboard",
+      element: <PrivateRouter><Dashboard></Dashboard></PrivateRouter>,
+      errorElement: <ErrorPage></ErrorPage>,
+      // children: [
+      //   {
+      //     path: 'participant-profile',
+      //     element: <ParticipantProfile></ParticipantProfile>
+      //   }
+      // ]
+    }
   ]);
 
   export default router;

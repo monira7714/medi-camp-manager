@@ -11,9 +11,8 @@ import useParticipants from '../../../Hooks/useParticipants';
 
 const PopularCamps = () => {
 
-    const { participants, refetch } = useParticipants();
-    console.log(participants);
-    const one = participants
+    const { participants } = useParticipants();
+    // console.log(participants);
 
     const { data: allCamps, isPending } = useQuery({
         queryKey: ['allCamps'],
@@ -22,7 +21,7 @@ const PopularCamps = () => {
                 .then(
                     (res) => res.json(),
                 )
-    })
+            })
 
     if (isPending) {
         return <Spinner className="h-16 w-16 text-gray-900/50 text-center" />
