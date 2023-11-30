@@ -2,13 +2,18 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/effect-cards';
 import { EffectCards } from 'swiper/modules';
-import { Spinner } from '@material-tailwind/react';
+import { Badge, Button, Spinner } from '@material-tailwind/react';
 import { useQuery } from '@tanstack/react-query';
 import { FaCalendar } from 'react-icons/fa';
 import { FaLocationDot } from 'react-icons/fa6';
 import { Link } from 'react-router-dom';
+import useParticipants from '../../../Hooks/useParticipants';
 
 const PopularCamps = () => {
+
+    const { participants, refetch } = useParticipants();
+    console.log(participants);
+    const one = participants
 
     const { data: allCamps, isPending } = useQuery({
         queryKey: ['allCamps'],
@@ -18,12 +23,10 @@ const PopularCamps = () => {
                     (res) => res.json(),
                 )
     })
+
     if (isPending) {
         return <Spinner className="h-16 w-16 text-gray-900/50 text-center" />
     }
-
-    const popularCamps = allCamps.filter(camps => camps.tag === "popular");
-    // console.log(popularCamps?.length);
 
     return (
         <div id="popular" className='lg:w-[900px] md:w-[520px] w-[250px] md:mx-8 lg:mx-20 my-12'>
@@ -38,7 +41,7 @@ const PopularCamps = () => {
                 className="mySwiper "
             >
                 {
-                    popularCamps?.map((camp, index) => <SwiperSlide key={camp.id}>
+                    allCamps?.map((camp, index) => <SwiperSlide key={camp.id}>
                         <div className='flex md:flex-row flex-col items-center justify-center'>
                             <img className='w-[250px] md:w-[250px] lg:w-[500px] lg:h-[100vh] md:h-[500px] h-[300px] rounded-s-lg' src={camp.img} />
                             <div className='bg-blue-400 lg:space-y-3 space-y-2 text-white lg::h-[100vh] rounded-e-lg md:px-6 px-2 lg:h-[100vh] md:h-[500px] lg:py-8 md:py-6 py-3 lg:w-[400px] md:w-[280px] w-[250px]'>
@@ -50,7 +53,15 @@ const PopularCamps = () => {
                                 <h4 className='font-bold text-black'>Price : ${camp.fees}</h4>
                                 <h4 className='flex gap-2 items-center lg:text-base text-sm'><FaCalendar className='text-black/60'></FaCalendar>{camp.date_time}</h4>
                                 <h5 className='flex gap-2 items-center lg:text-base text-sm'><FaLocationDot className='text-black/60'></FaLocationDot>{camp.location}</h5>
-                                <Link to={`/camp-details/${camp.id}`}><button className='bg-blue-900 rounded-lg px-4 py-2 my-4'>Details</button></Link>
+                                <div className='flex items-center justify-center'>
+                                    <Link to={`/camp-details/${camp.id}`}><button className='bg-blue-900 rounded-lg px-4 py-2 my-4 mr-4'>Details</button></Link>
+                                    {/* {
+                                        console.log(participants?.filter(item=> item.id === camp.id)?.length)
+                                    } */}
+                                    <Badge content={participants?.filter(item=> item.id === camp.id)?.length}>
+                                        <Button className='w-[150px] h-[40px]'>Participants</Button>
+                                    </Badge>
+                                </div>
                             </div>
                         </div>
                     </SwiperSlide>)

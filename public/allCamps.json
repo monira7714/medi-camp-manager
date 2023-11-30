@@ -14,20 +14,6 @@
     },
     {
         "id": 2,
-        "tag": "all",
-        "name": "Family Wellness Checkup Camp",
-        "img": "https://img.freepik.com/free-vector/stethoscope-happy-family_23-2147658240.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
-        "fees": 50,
-        "date_time": "2023-04-10 10:00 AM - 3:00 PM",
-        "location": "Community Center, Oak Street",
-        "service": "Comprehensive health assessments",
-        "professionals": "General , Practitioner , Pediatrician , Dietitian",
-        "audience": "Families with children",
-        "details": "A Family Wellness Checkup Camp is an organized event that focuses on the overall health and well-being of families. This camp typically offers a range of health services, screenings, and educational sessions to promote the health of all family members. Key components may include general health checkups, vaccinations, nutrition guidance, and family-centric health education."
-
-    },
-    {
-        "id": 3,
         "tag": "popular",
         "name": "Diabetes Awareness and Screening Camp",
         "img": "https://img.freepik.com/free-vector/world-diabetes-day-poster-design_1308-118842.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
@@ -41,21 +27,7 @@
 
     },
     {
-        "id": 4,
-        "tag": "all",
-        "name": "Women's Health and Wellness Camp",
-        "img": "https://i.ibb.co/Ttt8GSp/womens-health.jpg",
-        "fees": 50,
-        "date_time": "2023-06-08 11:00 AM - 4:00 PM",
-        "location": "Women's Center, Rose Street",
-        "service": "Women's health screenings and consultations",
-        "professionals": "Gynecologist , Mammographer , Nurse",
-        "audience": "Women of all ages",
-        "details": "A Women's Health and Wellness Camp is an organized event dedicated to addressing the health and well-being of women. These camps provide a range of services, including health screenings, consultations, and educational sessions specific to women's health issues including breast cancer screenings, reproductive health discussions, and mental health awareness."
-
-    },
-    {
-        "id": 5,
+        "id": 3,
         "tag": "popular",
         "name": "Pediatric Immunization Drive",
         "img": "https://img.freepik.com/free-vector/children-kids-wearing-face-mask-get-safety-vaccine-protection-from-coronavirus-covid19_40876-2934.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
@@ -69,7 +41,7 @@
 
     },
     {
-        "id": 6,
+        "id": 4,
         "tag": "popular",
         "name": "Mental Health Awareness Seminar",
         "img": "https://img.freepik.com/premium-photo/world-mental-health-day_860028-281.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
@@ -83,22 +55,7 @@
 
     },
     {
-        "id": 7,
-        "tag": "all",
-        "name": "Senior Health and Fitness Expo",
-        "img": "https://img.freepik.com/free-vector/poster-template-with-senior-health-fitness-conceptwatercolor-style_83728-9830.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
-        "fees": 25,
-        "date_time": "2023-09-18 10:00 AM - 2:00 PM",
-        "location": "Senior Center, Pine Street",
-        "service": "Senior fitness assessments and health talks",
-        "professionals":
-            "Geriatrician , Physical Therapist , Nutritionist",
-        "audience": "Seniors aged 60 and above",
-        "details": "A Senior Health and Fitness Expo is an event specifically designed for the health and well-being of senior citizens. These expos feature a variety of services activities, and resources aimed at promoting physical and mental health among older individuals. Key components may include health screenings, fitness demonstrations, nutritional guidance on topics relevant to seniors' well-being."
-
-    },
-    {
-        "id": 8,
+        "id": 5,
         "tag": "popular",
         "name": "Vision Care and Eye Screening Camp",
         "img": "https://img.freepik.com/premium-vector/checkup-eyesight-patient-by-ophthalmologist-doctor_202271-1289.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",
@@ -112,7 +69,7 @@
 
     },
     {
-        "id": 9,
+        "id": 6,
         "tag": "popular",
         "name": "Dental Health Camp",
         "img": "https://img.freepik.com/free-vector/dental-care-concept-illustration_52683-66519.jpg?size=626&ext=jpg&ga=GA1.1.1397583093.1696741193&semt=ais",

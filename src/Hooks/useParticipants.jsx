@@ -2,22 +2,23 @@ import { Spinner } from "@material-tailwind/react";
 import useAxiosPublic from "./useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
 
-const useTestimonials = () => {
-    
+const useParticipants = () => {
+
     const axiosPublic = useAxiosPublic();
 
-    const { data: reviews, isPending, refetch } = useQuery({
-        queryKey: ['reviews'],
-        queryFn: async () => {
-            const res = await axiosPublic.get('/reviews');
-            return res.data;
+    const { data: participants, isPending, refetch } = useQuery({
+        queryKey: ['participants'],
+        queryFn: async() =>{
+            const res = await axiosPublic.get('/joinCamp');
+            return res.data
         }
     })
+
     if (isPending) {
         return <Spinner className="h-16 w-16 text-gray-900/50 text-center" />
     }
 
-    return { reviews, refetch }
+    return {participants, refetch}
 };
 
-export default useTestimonials;
+export default useParticipants;

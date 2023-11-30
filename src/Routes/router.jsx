@@ -23,7 +23,7 @@ import CampDetails from "../Pages/CampDetail/CampDetails";
             element: <Login></Login>
         },
         {
-          path: 'home',
+          path: '/',
           element:<Home></Home>
         },
         {

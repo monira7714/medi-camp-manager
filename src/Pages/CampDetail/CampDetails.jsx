@@ -37,10 +37,8 @@ const CampDetails = () => {
 
     const camp = allCamps.find(item => item.id == campId);
     // console.log(allCamps,camp);
-    const { name, img, date_time, audience, location, details, fees } = camp;
+    const { name, img, date_time, audience, location, details, fees, id } = camp;
     
-
-
     const onSubmit = data => {
         const fee = fees
         const participantInfo = {
@@ -51,7 +49,8 @@ const CampDetails = () => {
             contact:data.contact,
             gender: data.gender,
             health: data.health,
-            fees: fee
+            fees: fee,
+            id: id
         }
         console.log(participantInfo);
         axiosPublic.post('/joinCamp', participantInfo)
@@ -111,8 +110,8 @@ const CampDetails = () => {
                                         <Input label="Specific Health Condition" size="lg" {...register("health", { required: true })} />
                                         <Input label="Emergency Contact" size="lg" {...register("contact", { required: true })} />
                                     </div>
-                                    <Button>
-                                        <input type="submit" onClick={handleOpen} value="Join Camp"/>
+                                    <Button onClick={handleOpen} >
+                                        <input type="submit" value="Join Camp"/>
                                     </Button>
                                     {/* <Button className="ml-4" variant="gradient" onClick={handleOpen}> Close
                                     </Button> */}

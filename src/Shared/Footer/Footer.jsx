@@ -36,10 +36,8 @@ const Footer = () => {
                                 <Typography variant="small" color="white" className="mb-3 text-lg font-medium "
                                 >Company</Typography>
                                 <li>
-                                    <Link to='/home#popular'>
-                                        <Typography as='a' href='/home#popular' className="py-1.5 text-[#e2dede] font-normal transition-colors hover:text-blue-gray-100">Home
+                                        <Typography as='a' href='/#popular' className="py-1.5 text-[#e2dede] font-normal transition-colors hover:text-blue-gray-100">Home
                                         </Typography>
-                                    </Link>
                                     <Link to='/contactUs'>
                                         <Typography className="py-1.5 text-[#e2dede] font-normal transition-colors hover:text-blue-gray-100">Contact Us
                                         </Typography>
