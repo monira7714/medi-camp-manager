@@ -1,6 +1,6 @@
 import { NavLink, Outlet } from "react-router-dom";
 // import useAdmin from "../Hooks/useAdmin";
-import { FaBook, FaCalendar, FaCampground, FaEnvelope, FaList, FaUsers, FaUtensils } from "react-icons/fa6";
+import { FaBook, FaCalendar, FaCampground, FaEnvelope, FaList, FaListUl, FaUsers, FaUtensils } from "react-icons/fa6";
 import { FaAd, FaHome, FaShoppingCart } from "react-icons/fa";
 import useAdmin from "../Hooks/useAdmin";
 import { Helmet } from "react-helmet-async";
@@ -14,7 +14,7 @@ const Dashboard = () => {
             <Helmet>
                 <title>Dashboard</title>
             </Helmet>
-            <div className="w-60 py-10 px-6 min-h-screen bg-purple-400 text-white">
+            <div className="w-68 py-10 px-6 min-h-screen bg-purple-400 text-white">
                 <ul className="menu p-4">
                     {
                         isAdmin ?
@@ -36,26 +36,34 @@ const Dashboard = () => {
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/manageItems">
+                                    <NavLink to="/dashboard/manage-camps">
                                         <h3 className="flex items-center gap-2">
-                                            <FaList></FaList>
-                                            Manage Items
+                                            <FaListUl></FaListUl>
+                                            Manage Camps
                                         </h3>
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/bookings">
+                                    <NavLink to="/dashboard: /manage-registered-camps">
                                         <h3 className="flex items-center gap-2">
                                             <FaBook></FaBook>
-                                            Manage Bookings
+                                            Manage Registered Camps
                                         </h3>
                                     </NavLink>
                                 </li>
                                 <li>
-                                    <NavLink to="/dashboard/allUsers">
+                                    <NavLink to="/dashboard/add-upcoming-camp">
                                         <h3 className="flex items-center gap-2">
                                             <FaUsers></FaUsers>
-                                            All Users
+                                            Add Upcoming Camp
+                                        </h3>
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink to="/dashboard/manage-upcoming-camps">
+                                        <h3 className="flex items-center gap-2">
+                                            <FaUsers></FaUsers>
+                                            Manage Upcoming Camp
                                         </h3>
                                     </NavLink>
                                 </li>

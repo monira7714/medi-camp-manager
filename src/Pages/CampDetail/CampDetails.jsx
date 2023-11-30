@@ -14,8 +14,8 @@ const CampDetails = () => {
     const axiosPublic = useAxiosPublic()
 
     useEffect(() => {
-        register('gender'); // register input
-        setValue('gender', 'Male'); // set default value
+        register('gender');
+        setValue('gender', 'Male'); 
       }, [register, setValue]);
 
     
