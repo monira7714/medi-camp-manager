@@ -34,7 +34,8 @@ const AddCamp = () => {
                 professionals: data.professionals,
                 audience: data.audience,
                 fee: data.fee,
-                details: data.details
+                details: data.details,
+                email: data.emai
             }
             console.log(campInfo);
             const campRes = await axiosSecure.post('/addCamp', campInfo);
@@ -64,8 +65,8 @@ return (
             <form onSubmit={handleSubmit(onSubmit)} className="mt-8 mb-2 w-2/3 mx-auto">
                 <div className="mb-1 flex flex-col gap-6">
                     <Input size="lg" label="Camp Name" {...register("camp", { required: true })} />
-                    <Input size="lg" label="Image URL" {...register("image", { required: true })} />
-                    <Input size="lg" label="Camp Fee" {...register("fee", { required: true })} type="file"/>
+                    <Input size="lg" label="Image URL" {...register("image", { required: true })} type="file"/>
+                    <Input size="lg" label="Camp Fee" {...register("fee", { required: true })} />
                     <Input size="lg" label="Date and Time" {...register("date_time", { required: true })} />
                     <Input size="lg" label="Location" {...register("location", { required: true })} />
                     <Input size="lg" label="Specialized Service Provided" {...register("service", { required: true })} />

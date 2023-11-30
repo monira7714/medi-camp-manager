@@ -14,7 +14,7 @@ const Dashboard = () => {
             <Helmet>
                 <title>Dashboard</title>
             </Helmet>
-            <div className="w-68 py-10 px-6 min-h-screen bg-purple-400 text-white">
+            <div className="w-68 py-10 md:px-6 px-2 min-h-screen bg-purple-400 text-white">
                 <ul className="menu p-4">
                     {
                         isAdmin ?
@@ -141,7 +141,7 @@ const Dashboard = () => {
                     </div>
                 </ul>
             </div>
-            <div className="flex-1 p-8">
+            <div className="flex-1 md:p-8 p-2">
                 <Outlet></Outlet>
             </div>
         </div>
