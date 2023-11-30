@@ -1,19 +1,5 @@
 import { Typography } from "@material-tailwind/react";
-
-const LINKS = [
-    {
-        title: "Product",
-        items: ["Overview", "Features", "Solutions", "Tutorials"],
-    },
-    {
-        title: "Company",
-        items: ["About us", "Contact Us", "Press", "News"],
-    },
-    {
-        title: "Resource",
-        items: ["Blog", "Newsletter", "Events", "Help center"],
-    },
-];
+import { Link } from "react-router-dom";
 
 const currentYear = new Date().getFullYear();
 
@@ -24,32 +10,46 @@ const Footer = () => {
                 <div className="mx-auto w-full max-w-7xl px-8">
                     <div className="grid grid-cols-1 justify-between gap-4 md:grid-cols-2">
                         <Typography variant="h5" className="mb-6 flex gap-3 items-center">
-                        <img className="w-[40px] h-[40px]" src="https://i.ibb.co/ZMZjKbS/camping-tent.png" alt="" />
-                        Medi Camp <br /> Manager
+                            <img className="w-[40px] h-[40px]" src="https://i.ibb.co/ZMZjKbS/camping-tent.png" alt="" />
+                            Medi Camp <br /> Manager
                         </Typography>
-                        <div className="grid grid-cols-3 justify-between gap-4">
-                            {LINKS.map(({ title, items }) => (
-                                <ul key={title}>
-                                    <Typography
-                                        variant="small"
-                                        color="white"
-                                        className="mb-3 text-lg font-medium "
-                                    >
-                                        {title}
-                                    </Typography>
-                                    {items.map((link) => (
-                                        <li key={link}>
-                                            <Typography
-                                                as="a"
-                                                href="#"
-                                                className="py-1.5 text-[#e2dede] font-normal transition-colors hover:text-blue-gray-100"
-                                            >
-                                                {link}
-                                            </Typography>
-                                        </li>
-                                    ))}
-                                </ul>
-                            ))}
+                        <div className="grid grid-cols-3 justify-between gap-4 w-full">
+                            <ul>
+                                <Typography variant="small" color="white" className="mb-3 text-lg font-medium "
+                                >Service</Typography>
+                                <li>
+                                    <Link to='/'>
+                                        <Typography className="py-1.5 text-[#e2dede] font-normal transition-colors hover:text-blue-gray-100">Overview
+                                        </Typography>
+                                    </Link>
+                                    <Link to='/availableCamps'>
+                                        <Typography className="py-1.5 text-[#e2dede] font-normal transition-colors hover:text-blue-gray-100">Available Camps
+                                        </Typography>
+                                    </Link>
+                                    <Link to='/dashboard'>
+                                        <Typography className="py-1.5 text-[#e2dede] font-normal transition-colors hover:text-blue-gray-100">Dashboard
+                                        </Typography>
+                                    </Link>
+                                </li>
+                            </ul>
+                            <ul>
+                                <Typography variant="small" color="white" className="mb-3 text-lg font-medium "
+                                >Company</Typography>
+                                <li>
+                                    <Link to='/home#popular'>
+                                        <Typography as='a' href='/home#popular' className="py-1.5 text-[#e2dede] font-normal transition-colors hover:text-blue-gray-100">Home
+                                        </Typography>
+                                    </Link>
+                                    <Link to='/contactUs'>
+                                        <Typography className="py-1.5 text-[#e2dede] font-normal transition-colors hover:text-blue-gray-100">Contact Us
+                                        </Typography>
+                                    </Link>
+                                    <Link to='/support'>
+                                        <Typography className="py-1.5 text-[#e2dede] font-normal transition-colors hover:text-blue-gray-100">Support
+                                        </Typography>
+                                    </Link>
+                                </li>
+                            </ul>
                         </div>
                     </div>
                     <div className="mt-12 flex w-full px-20 flex-col items-center justify-center border-blue-gray-50 py-4 md:flex-row md:justify-between">
@@ -98,8 +98,8 @@ const Footer = () => {
                         </div>
                     </div>
                 </div>
-            </footer>
-        </div>
+            </footer >
+        </div >
     );
 };
 

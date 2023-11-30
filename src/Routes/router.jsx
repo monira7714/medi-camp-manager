@@ -23,19 +23,19 @@ import CampDetails from "../Pages/CampDetail/CampDetails";
             element: <Login></Login>
         },
         {
-          path: '/',
+          path: 'home',
           element:<Home></Home>
         },
         {
-          path:'/availableCamps',
+          path:'availableCamps',
           element: <AvailableCamps></AvailableCamps>
         },
         {
-          path: '/camp-details/:campId',
+          path: 'camp-details/:campId',
           element: <CampDetails></CampDetails>
         },
         {
-          path: '/contactUs',
+          path: 'contactUs',
           element: <ContactUs></ContactUs>
         }
       ]

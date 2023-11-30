@@ -34,8 +34,8 @@ const ContactUs = () => {
                     </Popup>
                 </Marker>
             </MapContainer>
-            <div className="bg-blue-800 text-white flex flex-row gap-4 items-center justify-around px-12 py-12">
-                <div className="flex flex-col gap-3 items-center justify-center">
+            <div className="bg-blue-800 text-white flex lg:flex-row flex-col gap-4 md:gap-8 items-center justify-around px-12 py-12">
+                <div className="flex text-center flex-col gap-3 items-center justify-center">
                     <FaLocationDot className="text-2xl"></FaLocationDot>
                     <h1 className="text-2xl font-semibold">Address</h1>
                     <h3 className="text-xl font-semibold underline">Head Quarter</h3>

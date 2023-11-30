@@ -26,7 +26,7 @@ const PopularCamps = () => {
     // console.log(popularCamps?.length);
 
     return (
-        <div className='lg:w-[900px] md:w-[520px] w-[300px] md:mx-8 lg:mx-20 -mx-4 my-12'>
+        <div id="popular" className='lg:w-[900px] md:w-[520px] w-[250px] md:mx-8 lg:mx-20 my-12'>
             <div className='flex justify-center lg:pl-60 md:pl-28 pl-12'>
                 <h1 className='text-4xl font-semibold mb-16 text-center'>Popular Medical Camps</h1>
             </div>
@@ -40,9 +40,9 @@ const PopularCamps = () => {
                 {
                     popularCamps?.map((camp, index) => <SwiperSlide key={camp.id}>
                         <div className='flex md:flex-row flex-col items-center justify-center'>
-                            <img className='w-[250px] md:w-[250px] lg:w-[500px] lg:h-[100vh] md:h-[500px] h-[250px] rounded-s-lg' src={camp.img} />
-                            <div className='bg-blue-400 lg:space-y-4 space-y-2 text-white lg::h-[100vh] rounded-e-lg px-6 md:h-[500px] lg:py-12 md:py-6 py-3 lg:w-[400px] md:w-[280px] w-[250px]'>
-                                <h1 className='text-center lg:text-4xl text-xl font-bold'>{index + 1}</h1>
+                            <img className='w-[250px] md:w-[250px] lg:w-[500px] lg:h-[100vh] md:h-[500px] h-[300px] rounded-s-lg' src={camp.img} />
+                            <div className='bg-blue-400 lg:space-y-3 space-y-2 text-white lg::h-[100vh] rounded-e-lg md:px-6 px-2 lg:h-[100vh] md:h-[500px] lg:py-8 md:py-6 py-3 lg:w-[400px] md:w-[280px] w-[250px]'>
+                                <h1 className='text-center lg:text-2xl text-xl font-bold'>{index + 1}</h1>
                                 <h1 className='lg:text-3xl md:text-xl text-lg font-semibold'>Camp Name : {camp.name}</h1>
                                 <h3 className='lg:text-lg md:text-base text-sm'> Healthcare Professionals in Attendance : {camp.professionals}</h3>
                                 <h2 className='lg:text-lg md:text-base text-sm'>Special Service Provided : {camp.service}</h2>

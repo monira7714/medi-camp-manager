@@ -33,7 +33,7 @@ const NavBar = () => {
                 color="blue-gray"
                 className="p-1 font-normal"
             >
-                <Link to='/'><span className="flex items-center">Home</span></Link>
+                <Link to='home'><span className="flex items-center">Home</span></Link>
             </Typography>
             <Typography
                 as="li"
