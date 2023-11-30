@@ -27,6 +27,14 @@ const Login = () => {
                 })
                 navigate(location?.state ? location.state : '/')
             })
+            .catch(error =>{
+                console.log(error);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Oops.......',
+                    text: error.message
+                })
+            })
     }
 
     const handleGoogle = () => {

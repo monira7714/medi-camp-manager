@@ -1,9 +1,11 @@
 import { Spinner } from "@material-tailwind/react";
 import useAxiosPublic from "./useAxiosPublic";
 import { useQuery } from "@tanstack/react-query";
+// import useAxiosSecure from "./useAxiosSecure";
 
 const useParticipants = () => {
 
+    // const axiosSecure = useAxiosSecure()
     const axiosPublic = useAxiosPublic();
 
     const { data: participants, isPending, refetch } = useQuery({

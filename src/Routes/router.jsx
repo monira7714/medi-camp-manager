@@ -10,6 +10,8 @@ import CampDetails from "../Pages/CampDetail/CampDetails";
 import PrivateRouter from './PrivateRouter';
 import Dashboard from "../Layout/Dashboard";
 import ParticipantProfile from "../Pages/Dashboard/ParticipantProfile/ParticipantProfile";
+import AddCamp from "../Pages/Dashboard/AddCamp/AddCamp";
+import AllUsers from "../Pages/Dashboard/AllUser/AllUsers";
   
   const router = createBrowserRouter([
     {
@@ -47,12 +49,20 @@ import ParticipantProfile from "../Pages/Dashboard/ParticipantProfile/Participan
       path: "dashboard",
       element: <PrivateRouter><Dashboard></Dashboard></PrivateRouter>,
       errorElement: <ErrorPage></ErrorPage>,
-      // children: [
-      //   {
-      //     path: 'participant-profile',
-      //     element: <ParticipantProfile></ParticipantProfile>
-      //   }
-      // ]
+      children: [
+        {
+          path: 'participant-profile',
+          element: <ParticipantProfile></ParticipantProfile>
+        },
+        {
+          path:'add-a-camp',
+          element:<AddCamp></AddCamp>
+        },
+        {
+          path: 'allUsers',
+          element: <AllUsers></AllUsers>
+        }
+      ]
     }
   ]);
 
