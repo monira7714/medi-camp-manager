@@ -6,16 +6,14 @@ import useAuth from "../../../Hooks/useAuth";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import useAxiosPublic from "../../../Hooks/useAxiosPublic";
 
-const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
+// const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
+// const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const ManageCamps = () => {
     const [open, setOpen] = useState(false);
-    const { register, handleSubmit, reset } = useForm();
+    const { register, handleSubmit } = useForm();
     const axiosSecure = useAxiosSecure();
-    const axiosPublic = useAxiosPublic();
 
     const handleOpen = () => setOpen((cur) => !cur);
 
@@ -117,7 +115,7 @@ const ManageCamps = () => {
                         </tr>
                     </thead>
                     <tbody>
-                        {organizersCamp?.map(({ _id, name, date_time, location, service, professionals, audience, details, email }, index) => (
+                        {organizersCamp?.map(({ _id, name, date_time, location, service, professionals, audience, details, email }) => (
                             <tr key={name} className="even:bg-blue-gray-50/50">
                                 <td className="p-4">
                                     <Typography variant="small" color="blue-gray" className="font-normal">
